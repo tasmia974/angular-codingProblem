@@ -1,1 +1,46 @@
-<p>edit-post works!</p>
+<div class="modal-header">
+  <h4 class="modal-title">Update Post</h4>
+  </div>
+<div class="modal-body">
+  <div class="panel-container">
+    <div class="panel-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="postForm">
+            <form action="#" [formGroup]="postForm" *ngIf="ready">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label class="form-label" for="name">User:</label>
+                  <select name="name" id="name" class="form-control" formControlName="name">
+                    <option value="{{comment.id}}" *ngFor="let comment of comments">{{comment.name}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label class="form-label" for="body">Post:</label>
+                  <textarea name="body" id="body" rows="3" class="form-control" placeholder="Write post"
+                  formControlName="body"></textarea>
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <label class="form-label" for="body">Comment:</label>
+                <select name="name" id="body" class="form-control" formControlName="body">
+                  <option value="{{comment.id}}" *ngFor="let comment of comments">{{comment.body}}</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-right mt-3">
+      <div class="btn-group-sm" role="group">
+        <button type="button" class="btn btn-success ml-2 shadow-0" (click)="save()">Update</button>
+      </div>
+    </div>
+  </div>
+  </div>

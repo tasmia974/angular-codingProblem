@@ -1,1 +1,40 @@
-<p>create-post works!</p>
+<div class="modal-header">
+  <h4 class="modal-title">Add Post</h4>
+
+</div>
+<div class="modal-body">
+  <div class="panel-container">
+    <div class="panel-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="postForm">
+            <form action="#" [formGroup]="postForm">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label class="form-label" for="title">Title:</label>
+                  <input type="text" id="title" class="cfm form-control" placeholder="Title"
+                    formControlName="title" >
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label class="form-label" for="body">Post:</label>
+                  <textarea name="body" id="body" rows="3" class="form-control" placeholder="Write post"
+                  formControlName="body"></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-right mt-3">
+      <div class="btn-group-sm" role="group">
+        <button type="button" class="btn btn-success ml-2 shadow-0" (click)="save()">Save</button>
+      </div>
+    </div>
+  </div>
+  </div>

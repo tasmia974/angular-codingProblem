@@ -7,9 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ViewPostComponent } from './view-post/view-post.component';
 
 @NgModule({
-  declarations: [CreatePostComponent, EditPostComponent, ListPostsComponent],
+  declarations: [CreatePostComponent, EditPostComponent, ListPostsComponent, ViewPostComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -18,10 +19,17 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ModalModule.forRoot(),
     RouterModule.forChild([
       {
-        path: 'list',
+        path: '',
         component: ListPostsComponent
       },
-
+      {
+       path: 'post/:postId',
+        component: EditPostComponent
+      },
+      {
+        path: 'post/:postId/view',
+        component: ViewPostComponent
+       }
     ])
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

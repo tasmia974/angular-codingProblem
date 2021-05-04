@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>View Post</h1>
+
+
+  <div>
+    <strong>ID:</strong>
+    <p>{{ post?.id }}</p>
+  </div>
+
+  <div>
+    <strong>Title:</strong>
+    <p>{{ post?.title }}</p>
+  </div>
+
+  <div>
+    <strong>Post:</strong>
+    <p>{{ post?.body }}</p>
+  </div>
+
+
+  <div class="">
+    <div class="row my-2">
+      <div class="col-sm-12">
+        <div class="btn-group float-right my-2" role="group">
+          <button type="button" (click)="createComment()" class="btn btn-outline-success float-right">Add Comment</button>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Comment</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comment of comments">
+            <td>{{comment.body}}</td>
+            <td>
+            <td ><button (click)="delete(comment)"
+                class="btn btn-sm btn-outline-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

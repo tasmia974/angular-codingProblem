@@ -1,1 +1,38 @@
-<p>list-posts works!</p>
+<div class="grey-bg container-fluid">
+  <div class="row my-2">
+    <div class="col-sm-12">
+      <div class="btn-group float-right my-2" role="group">
+        <button type="button" (click)="createPost()" class="btn btn-outline-success float-right">Add Post</button>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Post</th>
+          <th>Edit</th>
+          <th>View</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of posts">
+          <td>{{post.id}}</td>
+          <td>{{post.title}}</td>
+          <td>{{post.body}}</td>
+          <td>
+            <a href="#" [routerLink]="['post/', post.id]" class="btn btn-primary">Edit</a>
+          </td>
+          <td>
+            <a href="#" [routerLink]="['post/', post.id, 'view']" class="btn btn-info">View</a>
+          </td>
+          <td ><button (click)="delete(post)"
+              class="btn btn-sm btn-outline-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

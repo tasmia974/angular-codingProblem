@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 import { CreateUserComponent } from './main/user/create-user/create-user.component';
 
+
 export const AppRoutes: Routes = [
-  { path: '', redirectTo: 'user', pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'user',
-    component: CreateUserComponent
+    path: 'dashboard',
+    component: AppComponent
 },
 {
-    path: 'main',
-    loadChildren: () => import('./main/main.module').then(m => m.MainModule),
+  path: 'main',
+  loadChildren: () => import('./main/main.module').then(m => m.MainModule),
 },
 ];
