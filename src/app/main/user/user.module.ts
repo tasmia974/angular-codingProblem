@@ -8,11 +8,8 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HttpClientModule } from '@angular/common/http';
-import { NgWizardModule, NgWizardConfig, THEME } from 'ng-wizard';
 
-const ngWizardConfig: NgWizardConfig = {
-  theme: THEME.default
-};
+
 
 @NgModule({
   declarations: [
@@ -23,7 +20,6 @@ const ngWizardConfig: NgWizardConfig = {
   imports: [
     CommonModule,
     FormsModule,
-    NgWizardModule.forRoot(ngWizardConfig),
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
